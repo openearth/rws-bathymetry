@@ -2,9 +2,9 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+This project is carried our in the frame of KPP-CIP projects in 2018. The project **KPPCIP2018 IV INNO Satellieten en bathymetrie voor monitoring kustmorfologie** proposed by  _Deltares_ has been awarded by _Rijkswaterstaat_ in November 2017. 
 
-[Link to another page](another-page).
+Within this project, _Deltares_ is asked to look at availble satellite images in the period 2015-2017 and explore ways to derive bathymetry from those images. Eventually Deltares provides a calibrated bathymetry for two areas of interest and compares the obtained bathymetry with _in-situ_ data collected via standard measurment methods.
 
 There should be whitespace between paragraphs.
 
