@@ -23,8 +23,9 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 
 ### [](#insitu)In-situ data
 * **Water levels**. Measurements from devices in the surroundings of the areas of interest have been downloaded from Matroos[GIVE LINK URL!!! ]
-* **Jarkus data**. Profiles measured along the Dutch coast, measured on a yearly basis with singlebeam mounted on boats and lidar sensor mounted on planes. This dataset is mainly used for validation of satellite-derived produtcs.
-* **Vaklodingen**. Multibeam measurements performed with ships. Approximately 3 years of overpass, depending on the area. This dataset is mainly used for validation of satellite-derived produtcs.
+* **Jarkus transects**. Profiles measured along the Dutch coast, measured on a yearly basis with singlebeam mounted on boats and lidar sensor mounted on planes. This dataset is mainly used for validation of satellite-derived produtcs.
+* **Vaklodingen 2d map**. Multibeam measurements performed with ships. Approximately 3 years of overpass, depending on the area. This dataset is mainly used for validation of satellite-derived produtcs.
+* **LIDAR 2d map**. Measurements from airborne mounted radar operating in the optical spectrum.
 
 
 #### here water level signal 
@@ -47,7 +48,7 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 
 ### [](#additional)Additional data
 * **Cloud coverage?**. Available online. Used to determine a threshold to automatically discard icloudy images.
-
+* **Bathymetric Products**. Processed data from a third commercial party. 
 
 ## [](#methodology)Methodology
 
