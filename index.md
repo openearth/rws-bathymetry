@@ -28,9 +28,8 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 * **LIDAR 2d map**. Measurements from airborne mounted radar operating in the optical spectrum.
 
 
-#### here water level signal 
-<img src="assets/images/buoy_water_level_chart.png" class="inline"/>
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
+**Water level signal** 
+(https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd)
 
 #### here an image of jarkus transects
 ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
