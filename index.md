@@ -29,6 +29,7 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 
 
 #### here water level signal 
+<img src="assets/images/buoy_water_level_chart.png" class="inline"/>
 ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
 
 #### here an image of jarkus transects
