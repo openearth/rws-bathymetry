@@ -81,11 +81,12 @@ https://player.vimeo.com/video/264566972
 
 https://player.vimeo.com/video/264566971
 
-Images from Landsat 8 and Sentinel 2, filtered by years 2015-current and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
+Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
 
 ### [](#validation)Validation and Comparison
 
-...
+<img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="inline"/>
+Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
 
 #### images..
 ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
