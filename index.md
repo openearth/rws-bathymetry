@@ -77,8 +77,6 @@ https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 
 https://player.vimeo.com/video/264566972
 
-Images from Landsat 8 and Sentinel 2, filtered by years 2015-current and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
-
 **RGB Landsat 8 and Sentinel 2 images, sorted by Water Level**
 
 https://player.vimeo.com/video/264566971
