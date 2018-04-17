@@ -69,9 +69,7 @@ https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 
 ## [](#results)Results
 
-...
 
-#### images..
 
 **False Colour Landsat 8 and Sentinel 2 images, sorted by Water Level**
 
@@ -94,6 +92,8 @@ Water level measurements plotted in gray have been derived from a buoy off the c
 
 **Reconstructed Bathymetry**
 <img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline"/>
+
+![Alt Text](assets/images/ameland_vaklodingen_bathymetry.gif)
 
 **Correlation Map of Reconstructed Bathymetry with Vaklodingen**
 <img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline"/>
