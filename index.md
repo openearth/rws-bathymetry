@@ -85,10 +85,17 @@ Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and 
 
 ### [](#validation)Validation and Comparison
 
+**Water levels**
 <img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="inline"/>
 Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
 
-#### images..
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
+**RWS Vaklodingen Data**
+<img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline"/>
+
+**Reconstructed Bathymetry**
+<img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline"/>
+
+**Correlation Map of Reconstructed Bathymetry with Vaklodingen**
+<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline"/>
 
 ## [](#ref)References
