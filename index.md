@@ -31,8 +31,8 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 **Water level signal** 
 https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 
-#### here an image of jarkus transects
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
+**Jarkus transects**
+<img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" class="inline"/> <img src="assets/images/ameland_jarkus_transects.png" alt="hi" class="inline"/>
 
 **RWS Vaklodingen Data**
 <img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline"/>
