@@ -14,8 +14,7 @@ Within this project, _Deltares_ is asked to look at availble satellite images in
 
 The two areas are both located in the North Sea area: the inlet of Ameland island in the Wadden Sea and the Western Scheldt outerdelta. These areas are characterised by active coastal morphodynamics, especially in the shallow waters. The use of remote sensing images for these areas helps to capture higher frequency dynamics, too costly and spatially confined to be fully detected by standard in-situ measurements.
 
-#### here a map with locations
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
+<img src="assets/images/roi.png" alt="hi" class="inline"/>
 
 ## [](#data)Data availability
 
@@ -46,8 +45,8 @@ https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 * **TripleSat**. Commercial Satellite sensor, made available by NSO (Netherlands Space Office).
 * **RapidEye**. Commercial Satellite sensor, made available by NSO (Netherlands Space Office).
 
-#### here with images from those satellites
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
+<img src="assets/images/westerschelde_s2_rgb.png" alt="hi" class="inline" width="49%"/>
+<img src="assets/images/ameland_s2_rgb.png" alt="hi" class="inline" width="49%"/>
 
 ### [](#additional)Additional data
 * **Cloud coverage?**. Available online. Used to determine a threshold to automatically discard icloudy images.
