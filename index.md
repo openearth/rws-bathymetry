@@ -32,10 +32,12 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 
 **Jarkus transects**
-<img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" class="inline" width="40%"/> <img src="assets/images/ameland_jarkus_transects.png" alt="hi" class="inline" width="40%"/>
+
+<img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" class="inline" width="50%"/> <img src="assets/images/ameland_jarkus_transects.png" alt="hi" class="inline" width="50%"/>
 
 **RWS Vaklodingen Data**
-<img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="40%"/>
+
+<img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="60%"/>
 
 ### [](#satellites)Remote sensing data
 * **Sentinel2**. European EO mission launched in 2015 (A) and 2017 (B). It provides multi-spectral data in the visible, near infrared and short wave infrared part of the spectrum.
@@ -63,9 +65,8 @@ https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 # Python code as well if needed.
 ```
 
-<img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline" width="40%"/>
-
-<img src="assets/images/ameland_bathymetry_high_correlation.png" alt="hi" class="inline" width="40%"/>
+<img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline" width="50%"/>
+<img src="assets/images/ameland_bathymetry_high_correlation.png" alt="hi" class="inline" width="50%"/>
 
 
 ## [](#results)Results
@@ -85,7 +86,7 @@ Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and 
 ### [](#validation)Validation and Comparison
 
 **Water levels**
-<img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="inline" width="40%"/>
+<img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="inline"/>
 Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
 
 **Reconstructed Bathymetry**
@@ -93,7 +94,7 @@ Water level measurements plotted in gray have been derived from a buoy off the c
 Visual comparison of the vaklodingen data and the reconstructed bathymetry from this project.
 
 **Correlation Map of Reconstructed Bathymetry with Vaklodingen**
-<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="40%"/>
+<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="50%"/>
 Visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation (value?) between data.
 
 ## [](#ref)References
