@@ -37,7 +37,8 @@ https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 
 **RWS Vaklodingen Data**
 
-<img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="49%"/>
+<img src="assets/images/westerschelde_rws_vaklodingen.png" alt="hi" class="inline" width="49%"/>
+<img src="assets/images/ameland" alt="hi" class="inline" width="49%"/>
 
 ### [](#satellites)Remote sensing data
 * **Sentinel2**. European EO mission launched in 2015 (A) and 2017 (B). It provides multi-spectral data in the visible, near infrared and short wave infrared part of the spectrum.
