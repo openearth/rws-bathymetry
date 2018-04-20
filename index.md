@@ -40,6 +40,8 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 <img src="assets/images/westerschelde_rws_vaklodingen.png" alt="hi" class="inline" width="49%"/>
 <img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="49%"/>
 
+A total of 90 Vaklodingen images, measured annually, between 2010 and 2015 are combined to create a mosaic of bathymetry along the Dutch coastline.
+
 ### [](#satellites)Remote sensing data
 * **Sentinel2**. European EO mission launched in 2015 (A) and 2017 (B). It provides multi-spectral data in the visible, near infrared and short wave infrared part of the spectrum.
 * **LandSat8**. American EO mission launched in 2013. It provides multi-spectral images thanks to the OLI (Operational Land Imager) and Thermal InfraRed sensors.
@@ -49,26 +51,22 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 <img src="assets/images/westerschelde_s2_rgb.png" alt="hi" class="inline" width="49%"/>
 <img src="assets/images/ameland_s2_rgb.png" alt="hi" class="inline" width="49%"/>
 
+For this analysis, we have used Sentinel 2 and Landsat imagery up to present day. A sample of cloud-free satellite imagery from Sentinel 2 available for the regions of interest are displayed above.
+
 ### [](#additional)Additional data
-* **Cloud coverage?**. Available online. Used to determine a threshold to automatically discard icloudy images.
+* **Cloud coverage**. The [Global 1-km Cloud Cover](http://www.earthenv.org/cloud) map is used to determine a threshold to automatically discard cloudy images.
 * **Bathymetric Products**. Processed data from a third commercial party. 
 
 ## [](#methodology)Methodology
 
-
-```js
-// Javascript code with syntax highlighting.
-// Feel free to add JS snippets, for example to show how to upload collections,
-// or how do you implement algorithms (as mean, thresholding, random forest, ...)
-```
-
-```python
-# Python code as well if needed.
-```
+Using Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to present day are used for analysis. This image collection is sorted by cloud cover, and the percentage of images filtered based on the annual cloud coverage for the regions (~66% for the Netherlands).
 
 <img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline" width="49%"/>
 <img src="assets/images/ameland_bathymetry_high_correlation.png" alt="hi" class="inline" width="49%"/>
 
+On the left a sample of the reconstructed bathymetry is pictured. In the insert, 5000 points within the area of interest were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the right, when points are randomly sampled accross highly correlated regions (> 95% correlation), a more evident relationship is measured in both shallow and deeper areas.
+
+Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry. 
 
 ## [](#results)Results
 
@@ -79,13 +77,13 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 
 <img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="center"/>
 
-Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
+Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free (<15% coverage) images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
 
 [Video](https://player.vimeo.com/video/264566972) of false colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
 
 [Video](https://player.vimeo.com/video/264566971) of RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
 
-[Code]() which creates and exports above videos.
+[Code](https://code.earthengine.google.com/38a551ad6f10413f5ede7daafc30c97b) which creates and exports above videos.
 
 Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
 
@@ -99,6 +97,6 @@ Visual comparison of the vaklodingen data and the reconstructed bathymetry from 
 
 <img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="center" width="80%"/>
 
-Visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation (value?) between data.
+Visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation between data.
 
 ## [](#ref)References
