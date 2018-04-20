@@ -28,7 +28,7 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 
 
 **Water level signal** 
-https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
+![Link Text]https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 
 **Jarkus transects**
 
@@ -66,8 +66,8 @@ https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 # Python code as well if needed.
 ```
 
-<img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline" width="50%"/>
-<img src="assets/images/ameland_bathymetry_high_correlation.png" alt="hi" class="inline" width="50%"/>
+<img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline" width="49%"/>
+<img src="assets/images/ameland_bathymetry_high_correlation.png" alt="hi" class="inline" width="49%"/>
 
 
 ## [](#results)Results
@@ -76,11 +76,11 @@ https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
 
 **False Colour Landsat 8 and Sentinel 2 images, sorted by Water Level**
 
-https://player.vimeo.com/video/264566972
+![Link Text](https://player.vimeo.com/video/264566972)
 
 **RGB Landsat 8 and Sentinel 2 images, sorted by Water Level**
 
-https://player.vimeo.com/video/264566971
+![Link Text](https://player.vimeo.com/video/264566971)
 
 Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
 
@@ -100,7 +100,7 @@ Visual comparison of the vaklodingen data and the reconstructed bathymetry from 
 
 **Correlation Map of Reconstructed Bathymetry with Vaklodingen**
 
-<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="60%"/>
+<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="80%"/>
 
 Visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation (value?) between data.
 
