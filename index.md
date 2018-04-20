@@ -28,7 +28,7 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 
 
 **Water level signal** 
-![Link Text]https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd
+[Google Earth Engine code](https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd) which imports shapefiles of water level data, and displays the locations of the buoys and plots a subset of this data.
 
 **Jarkus transects**
 
@@ -73,24 +73,21 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 ## [](#results)Results
 
 
-
-**False Colour Landsat 8 and Sentinel 2 images, sorted by Water Level**
-
-![Link Text](https://player.vimeo.com/video/264566972)
-
-**RGB Landsat 8 and Sentinel 2 images, sorted by Water Level**
-
-![Link Text](https://player.vimeo.com/video/264566971)
-
-Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
-
 ### [](#validation)Validation and Comparison
 
 **Water levels**
 
-<img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="inline"/>
+<img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="center"/>
 
 Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
+
+[Video](https://player.vimeo.com/video/264566972) of false colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
+
+[Video](https://player.vimeo.com/video/264566971) of RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
+
+[Code]() which creates and exports above videos.
+
+Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
 
 **Reconstructed Bathymetry**
 
@@ -100,7 +97,7 @@ Visual comparison of the vaklodingen data and the reconstructed bathymetry from 
 
 **Correlation Map of Reconstructed Bathymetry with Vaklodingen**
 
-<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="80%"/>
+<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="center" width="80%"/>
 
 Visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation (value?) between data.
 
