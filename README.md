@@ -2,12 +2,12 @@
 
 [![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)](https://travis-ci.org/pages-themes/cayman) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman.svg)](https://badge.fury.io/rb/jekyll-theme-cayman)
 
-*[RWS Bathymetry](https://www.openearth.nl/rws-batymetry/) static files for website page. RWS - Towards a satellite derived bathymetry.*
+*[RWS Bathymetry](https://www.openearth.nl/rws-bathymetry/) static files for website page. RWS - Towards a satellite derived bathymetry.*
 
 Using the Cayman theme as template.
 
 ### Go to website
-[RWS Bathymetry](https://www.openearth.nl/rws-batymetry/)
+[RWS Bathymetry](https://www.openearth.nl/rws-bathymetry/)
 
 ### Run website locally
 
