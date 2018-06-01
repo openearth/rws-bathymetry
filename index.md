@@ -15,6 +15,13 @@ Within this project, _Deltares_ is asked to look at availble satellite images in
 The two areas are both located in the North Sea area: the inlet of Ameland island in the Wadden Sea and the Western Scheldt outerdelta. These areas are characterised by active coastal morphodynamics, especially in the shallow waters. The use of remote sensing images for these areas helps to capture higher frequency dynamics, too costly and spatially confined to be fully detected by standard in-situ measurements.
 
 <img src="assets/images/roi.png" alt="hi" class="inline"/>
+$(function ()
+{
+    $('img').on('click', function ()
+    {
+        $(this).width(1000);
+    });
+});
 
 ## [](#data)Data availability
 
