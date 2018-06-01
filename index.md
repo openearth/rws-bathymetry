@@ -14,14 +14,8 @@ Within this project, _Deltares_ is asked to look at availble satellite images in
 
 The two areas are both located in the North Sea area: the inlet of Ameland island in the Wadden Sea and the Western Scheldt outerdelta. These areas are characterised by active coastal morphodynamics, especially in the shallow waters. The use of remote sensing images for these areas helps to capture higher frequency dynamics, too costly and spatially confined to be fully detected by standard in-situ measurements.
 
-<img src="assets/images/roi.png" alt="hi" class="inline"/>
-$(function ()
-{
-    $('img').on('click', function ()
-    {
-        $(this).width(1000);
-    });
-});
+<a href="assets/images/roi.png"><img src="assets/images/roi.png" alt="hi" class="inline"/></a>
+
 
 ## [](#data)Data availability
 
@@ -68,12 +62,6 @@ For this analysis, we have used Sentinel 2 and Landsat imagery up to present day
 
 Using Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to present day are used for analysis. This image collection is sorted by cloud cover, and the percentage of images filtered based on the annual cloud coverage for the regions (~66% for the Netherlands).
 
-<img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline" width="49%"/>
-<img src="assets/images/ameland_bathymetry_high_correlation.png" alt="hi" class="inline" width="49%"/>
-
-On the left a sample of the reconstructed bathymetry is pictured. In the insert, 5000 points within the area of interest were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the right, when points are randomly sampled accross highly correlated regions (> 95% correlation), a more evident relationship is measured in both shallow and deeper areas.
-
-Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry. 
 
 ## [](#results)Results
 
@@ -100,10 +88,14 @@ Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and 
 
 Visual comparison of the vaklodingen data and the reconstructed bathymetry from this project.
 
-**Correlation Map of Reconstructed Bathymetry with Vaklodingen**
+<img src="assets/images/ameland_bathymetry.png" alt="hi" class="inline" width="49%"/>
+<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="49%"/>
 
-<img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="center" width="80%"/>
+On the left a sample of the reconstructed bathymetry is pictured. On the right shows a visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation between data.
 
-Visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation between data.
+<img src="assets/images/scatter_plot_randomly_sampled.png" alt="hi" class="inline" width="49%"/>
+<img src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="49%"/>
+On the left, 5000 points within the above image were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the right, when points are randomly sampled accross highly correlated regions (> 95% correlation indicated by green regions), a more evident relationship is measured in both shallow and deeper areas. Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry.
+
 
 ## [](#ref)References
