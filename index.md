@@ -35,13 +35,13 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 
 <a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" class="inline" width="49%"/></a>
 <a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi" class="inline" width="49%"/></a>
+Jarkus transects for the Westerschelde (left) and Ameland (right) regions.
 
 **RWS Vaklodingen Data**
 
 <a href="assets/images/westerschelde_rws_vaklodingen.png"><img src="assets/images/westerschelde_rws_vaklodingen.png" alt="hi" class="inline" width="49%"/></a>
 <a href="assets/images/ameland_rws_vaklodingen.png"><img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="49%"/></a>
-
-A total of 90 Vaklodingen images, measured annually, between 2010 and 2015 are combined to create a mosaic of bathymetry along the Dutch coastline.
+Vaklodingen data for the Westerschelde and Ameland regions. A total of 90 Vaklodingen images, measured annually, between 2010 and 2015 are combined to create a mosaic of bathymetry along the Dutch coastline.
 
 ### [](#satellites)Remote sensing data
 * **Sentinel2**. European EO mission launched in 2015 (A) and 2017 (B). It provides multi-spectral data in the visible, near infrared and short wave infrared part of the spectrum.
@@ -51,8 +51,7 @@ A total of 90 Vaklodingen images, measured annually, between 2010 and 2015 are c
 
 <a href="assets/images/westerschelde_s2_rgb.png"><img src="assets/images/westerschelde_s2_rgb.png" alt="hi" class="inline" width="49%"/></a>
 <a href="assets/images/ameland_s2_rgb.png"><img src="assets/images/ameland_s2_rgb.png" alt="hi" class="inline" width="49%"/></a>
-
-For this analysis, we have used Sentinel 2 and Landsat imagery up to present day. A sample of cloud-free satellite imagery from Sentinel 2 available for the regions of interest are displayed above.
+For this analysis, we have used Sentinel 2 and Landsat imagery up to present day. A sample of cloud-free satellite imagery from Sentinel 2 available for the regions of interest are displayed above. 
 
 ### [](#additional)Additional data
 * **Cloud coverage**. The [Global 1-km Cloud Cover](http://www.earthenv.org/cloud) map is used to determine a threshold to automatically discard cloudy images.
@@ -71,7 +70,6 @@ Using Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to 
 **Water levels**
 
 <a href="assets/images/nes_L8_S2_overlap.png"><img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="center"/></a>
-
 Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free (<15% coverage) images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
 
 [Video](https://player.vimeo.com/video/264566972) of false colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
@@ -90,12 +88,10 @@ Visual comparison of the vaklodingen data and the reconstructed bathymetry from 
 
 <a href="assets/images/ameland_reconstructed_bathymetry.png"><img src="assets/images/ameland_reconstructed_bathymetry.png" alt="hi" class="inline" width="49%"/></a>
 <a href="assets/images/ameland_bathymetry_correlation_map.png"><img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="49%"/></a>
-
-On the left a sample of the reconstructed bathymetry is pictured. On the right shows a visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation between data.
-
 <a href="assets/images/scatter_plot_randomly_sampled.png"><img src="assets/images/scatter_plot_randomly_sampled.png" alt="hi" class="inline" width="49%"/></a>
 <a href="assets/images/scatter_plot_high_correlation.png"><img src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="49%"/></a>
-On the left, 5000 points within the above image were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the right, when points are randomly sampled accross highly correlated regions (> 95% correlation indicated by green regions), a more evident relationship is measured in both shallow and deeper areas. Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry.
+
+On the top left a sample of the reconstructed bathymetry is pictured. On the top right shows a visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation between data. On the bottom left, 5000 points within the above image were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the bottom right, when points are randomly sampled accross highly correlated regions (> 95% correlation indicated by green regions), a more evident relationship is measured in both shallow and deeper areas. Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry.
 
 
 ## [](#ref)References
