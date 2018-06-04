@@ -22,25 +22,25 @@ The two areas are both located in the North Sea area: the inlet of Ameland islan
 As a rich data country, The Netherlands is monitoring its 350 km of coast at a yearly rate. For the purpose of his study, several datasets of measurement observations are explored, analysed, and compared against remote sensing products. Here is a list of data used during the project.
 
 ### [](#insitu)In-situ data
-* **Water levels**. Measurements from devices in the surroundings of the areas of interest have been downloaded from Matroos[GIVE LINK URL!!! ]
-* **Jarkus transects**. Profiles measured along the Dutch coast, measured on a yearly basis with singlebeam mounted on boats and lidar sensor mounted on planes. This dataset is mainly used for validation of satellite-derived produtcs.
-* **Vaklodingen 2d map**. Multibeam measurements performed with ships. Approximately 3 years of overpass, depending on the area. This dataset is mainly used for validation of satellite-derived produtcs.
+* **[Water levels](http://matroos.deltares.nl/)**. Measurements from devices in the surroundings of the areas of interest have been downloaded from Matroos.
+* **[Jarkus transects](https://github.com/openearth/jarkus)**. Profiles measured along the Dutch coast, measured on a yearly basis with singlebeam mounted on boats and lidar sensor mounted on planes. This dataset is mainly used for validation of satellite-derived products. 
+* **[Vaklodingen 2d map](http://opendap.deltares.nl/thredds/catalog/opendap/rijkswaterstaat/vaklodingen/catalog.html)**. Multibeam measurements performed with ships. Approximately 3 years of overpass, depending on the area. This dataset is mainly used for validation of satellite-derived products. 
 * **LIDAR 2d map**. Measurements from airborne mounted radar operating in the optical spectrum.
 
 
-**Water level signal** 
+**Water levels** 
 [Google Earth Engine code](https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd) which imports shapefiles of water level data, and displays the locations of the buoys and plots a subset of this data.
 
 **Jarkus transects**
 
-<a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" class="inline" width="49%"/></a>
-<a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi" class="inline" width="49%"/></a>
+<a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" class="inline" width="48%"/></a>
+<a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi" class="inline" width="48%"/></a>
 Jarkus transects for the Westerschelde (left) and Ameland (right) regions.
 
 **RWS Vaklodingen Data**
 
-<a href="assets/images/westerschelde_rws_vaklodingen.png"><img src="assets/images/westerschelde_rws_vaklodingen.png" alt="hi" class="inline" width="49%"/></a>
-<a href="assets/images/ameland_rws_vaklodingen.png"><img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="49%"/></a>
+<a href="assets/images/westerschelde_rws_vaklodingen.png"><img src="assets/images/westerschelde_rws_vaklodingen.png" alt="hi" class="inline" width="48%"/></a>
+<a href="assets/images/ameland_rws_vaklodingen.png"><img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="48%"/></a>
 Vaklodingen data for the Westerschelde and Ameland regions. A total of 90 Vaklodingen images, measured annually, between 2010 and 2015 are combined to create a mosaic of bathymetry along the Dutch coastline.
 
 ### [](#satellites)Remote sensing data
@@ -86,10 +86,10 @@ Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and 
 
 Visual comparison of the vaklodingen data and the reconstructed bathymetry from this project.
 
-<a href="assets/images/ameland_reconstructed_bathymetry.png"><img src="assets/images/ameland_reconstructed_bathymetry.png" alt="hi" class="inline" width="49%"/></a>
-<a href="assets/images/ameland_bathymetry_correlation_map.png"><img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="49%"/></a>
-<a href="assets/images/scatter_plot_randomly_sampled.png"><img src="assets/images/scatter_plot_randomly_sampled.png" alt="hi" class="inline" width="49%"/></a>
-<a href="assets/images/scatter_plot_high_correlation.png"><img src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="49%"/></a>
+<a href="assets/images/ameland_reconstructed_bathymetry.png"><img src="assets/images/ameland_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
+<a href="assets/images/ameland_bathymetry_correlation_map.png"><img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
+<a href="assets/images/scatter_plot_randomly_sampled.png"><img src="assets/images/scatter_plot_randomly_sampled.png" alt="hi" class="inline" width="48%"/></a>
+<a href="assets/images/scatter_plot_high_correlation.png"><img src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="48%"/></a>
 
 On the top left a sample of the reconstructed bathymetry is pictured. On the top right shows a visual representation of the correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation (> 0.95), and red represents areas of lower correlation between data. On the bottom left, 5000 points within the above image were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the bottom right, when points are randomly sampled accross highly correlated regions (> 95% correlation indicated by green regions), a more evident relationship is measured in both shallow and deeper areas. Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry.
 
