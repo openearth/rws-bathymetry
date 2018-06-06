@@ -32,8 +32,8 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 [Google Earth Engine code](https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd) which imports shapefiles of water level data, and displays the locations of the buoys and plots a subset of this data.
 
 **Jarkus transects**
-<span><a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" width="48%"/></a><\span>
-<span><a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi" width="48%"/></a><\span>
+<span><a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" width="48%"/></a></span>
+<span><a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi" width="48%"/></a></span>
 Jarkus transects for the Westerschelde (left) and Ameland (right) regions.
 
 **RWS Vaklodingen Data**
