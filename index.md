@@ -74,9 +74,13 @@ Using Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to 
 <a href="assets/images/nes_L8_S2_overlap.png"><img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="center"/></a>
 Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free (<15% coverage) images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
 
-[Video](https://player.vimeo.com/video/264566972) of false colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
+[Video](https://player.vimeo.com/video/264566972?autoplay=1&loop=1) of false colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
+<iframe src="https://player.vimeo.com/video/264566972?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/264566972">False colour L8 and S2 sorted by water level</a> from <a href="https://vimeo.com/user83949260">Christine Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-[Video](https://player.vimeo.com/video/264566971) of RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
+[Video](https://player.vimeo.com/video/264566971?autoplay=1&loop=1) of RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
+<iframe src="https://player.vimeo.com/video/264566971?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/264566971">RGB L8 and S2 sorted by water level</a> from <a href="https://vimeo.com/user83949260">Christine Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 [Code](https://code.earthengine.google.com/38a551ad6f10413f5ede7daafc30c97b) which creates and exports above videos.
 
