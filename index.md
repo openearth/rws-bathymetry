@@ -31,11 +31,12 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 **Water levels** 
 [Google Earth Engine code](https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd) which imports shapefiles of water level data, and displays the locations of the buoys and plots a subset of this data.
 
-<p>**Jarkus transects**</p>
-
-<span><a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" width="48%"/></a></span>
-<span><a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi" width="48%"/></a></span>
-<p>Jarkus transects for the Westerschelde (left) and Ameland (right) regions.</p>
+**Jarkus transects**
+<div>
+  <a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" width="48%"/></a>
+  <a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi" width="48%"/></a>
+</div>
+Jarkus transects for the Westerschelde (left) and Ameland (right) regions.
 
 **RWS Vaklodingen Data**
 
@@ -86,7 +87,23 @@ Water level measurements plotted in gray have been derived from a buoy off the c
 
 Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
 
-**Reconstructed Bathymetry**
+**Jarkus transects**
+<a href="assets/images/3002500_jarkus_region.png"><img src="assets/images/3002500_jarkus_region.png" alt="hi" width="48%"/></a>
+Jarkus transect #3002500 and region selected for analysis, located [].
+<a href="assets/images/3002500_z_vak_invdepth_jarkus.png"><img src="assets/images/3002500_z_vak_invdepth_jarkus.png" alt="hi" width="48%"/></a>
+Comparison of bathymetry from Jarkus transect #3002500 (z), vaklodingen, and inverse-depth in selected region for analysis.
+
+<a href="assets/images/3000720_jarkus_region.png"><img src="assets/images/3000720_jarkus_region.png" alt="hi" width="48%"/></a>
+Jarkus transect #3000720 and region selected for analysis, located .
+<a href="assets/images/3000720_z_vak_invdepth_jarkus.png"><img src="assets/images/3000720_z_vak_invdepth_jarkus.png" alt="hi" width="48%"/></a>
+Comparison of bathymetry from Jarkus transect #33000720 (z), vaklodingen, and inverse-depth in selected region for analysis.
+
+<a href="assets/images/17000071_jarkus_region.png"><img src="assets/images/17000071_jarkus_region.png" alt="hi" width="48%"/></a>
+Jarkus transect #3000720 and region selected for analysis. Region centered at (3.56, 51.40).
+<a href="assets/images/17000071_z_vak_invdepth_jarkus.png"><img src="assets/images/17000071_z_vak_invdepth_jarkus.png" alt="hi" width="48%"/></a>
+Comparison of bathymetry from Jarkus transect #17000071 (z), vaklodingen, and inverse-depth in selected region for analysis.
+
+**RWS Vaklodingen Data**
 
 ![Alt Text](assets/images/ameland_vaklodingen_bathymetry.gif)
 
@@ -102,5 +119,7 @@ On the top left a sample of the reconstructed bathymetry near Ameland is picture
 <a href="assets/images/westerschelde_reconstructed_bathymetry.png"><img src="assets/images/westerschelde_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
 <a href="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png"><img src="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
 On the top left a sample of the reconstructed bathymetry of the Westerschelde is pictured. On the top right shows a visual representation of the absolute correlation between the vaklodingen and the reconstructed bathymetry in the intertidal regions. Green represents areas of high correlation, and red represents areas of lower correlation between data. 
+
+
 
 ## [](#ref)References
