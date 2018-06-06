@@ -87,7 +87,7 @@ Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and 
 Visual comparison of the vaklodingen data and the reconstructed bathymetry from this project.
 
 <a href="assets/images/ameland_reconstructed_bathymetry.png"><img src="assets/images/ameland_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
-<a href="assets/images/ameland_bathymetry_correlation_map.png"><img src="assets/images/ameland_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
+<a href="assets/images/ameland_intertidal_bathymetry_correlation_map.png"><img src="assets/images/ameland_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
 <a href="assets/images/scatter_plot_randomly_sampled.png"><img src="assets/images/scatter_plot_randomly_sampled.png" alt="hi" class="inline" width="48%"/></a>
 <a href="assets/images/scatter_plot_high_correlation.png"><img src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="48%"/></a>
 
