@@ -33,8 +33,8 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 
 **Jarkus transects**
 <div>
-  <a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi" width="48%"/></a>
-  <a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi" width="48%"/></a>
+  <a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi"  class="inline" width="48%"/></a>
+  <a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi"  class="inline" width="48%"/></a>
 </div>
 Jarkus transects for the Westerschelde (left) and Ameland (right) regions.
 
@@ -75,11 +75,11 @@ Using Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to 
 <a href="assets/images/nes_L8_S2_overlap.png"><img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="center"/></a>
 Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free (<15% coverage) images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
 
-[Video](https://player.vimeo.com/video/264566972?autoplay=1&loop=1) of false colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
+False colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
 <iframe src="https://player.vimeo.com/video/264566972?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/264566972">False colour L8 and S2 sorted by water level</a> from <a href="https://vimeo.com/user83949260">Christine Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-[Video](https://player.vimeo.com/video/264566971?autoplay=1&loop=1) of RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
+RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
 <iframe src="https://player.vimeo.com/video/264566971?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/264566971">RGB L8 and S2 sorted by water level</a> from <a href="https://vimeo.com/user83949260">Christine Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
@@ -88,19 +88,19 @@ Water level measurements plotted in gray have been derived from a buoy off the c
 Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
 
 **Jarkus transects**
-<a href="assets/images/3002500_jarkus_region.png"><img src="assets/images/3002500_jarkus_region.png" alt="hi" width="48%"/></a>
+<a href="assets/images/3002500_jarkus_region.png"><img src="assets/images/3002500_jarkus_region.png" alt="hi"  class="inline" width="95%"/></a>
 Jarkus transect #3002500 and region selected for analysis, located [].
-<a href="assets/images/3002500_z_vak_invdepth_jarkus.png"><img src="assets/images/3002500_z_vak_invdepth_jarkus.png" alt="hi" width="48%"/></a>
+<a href="assets/images/3002500_z_vak_invdepth_jarkus.png"><img src="assets/images/3002500_z_vak_invdepth_jarkus.png" alt="hi"  class="inline" width="95%"/></a>
 Comparison of bathymetry from Jarkus transect #3002500 (z), vaklodingen, and inverse-depth in selected region for analysis.
 
-<a href="assets/images/3000720_jarkus_region.png"><img src="assets/images/3000720_jarkus_region.png" alt="hi" width="48%"/></a>
+<a href="assets/images/3000720_jarkus_region.png"><img src="assets/images/3000720_jarkus_region.png" alt="hi"  class="inline" width="95%"/></a>
 Jarkus transect #3000720 and region selected for analysis, located .
-<a href="assets/images/3000720_z_vak_invdepth_jarkus.png"><img src="assets/images/3000720_z_vak_invdepth_jarkus.png" alt="hi" width="48%"/></a>
+<a href="assets/images/3000720_z_vak_invdepth_jarkus.png"><img src="assets/images/3000720_z_vak_invdepth_jarkus.png" alt="hi"  class="inline" width="95%"/></a>
 Comparison of bathymetry from Jarkus transect #33000720 (z), vaklodingen, and inverse-depth in selected region for analysis.
 
-<a href="assets/images/17000071_jarkus_region.png"><img src="assets/images/17000071_jarkus_region.png" alt="hi" width="48%"/></a>
+<a href="assets/images/17000071_jarkus_region.png"><img src="assets/images/17000071_jarkus_region.png" alt="hi" width="95%"/></a>
 Jarkus transect #3000720 and region selected for analysis. Region centered at (3.56, 51.40).
-<a href="assets/images/17000071_z_vak_invdepth_jarkus.png"><img src="assets/images/17000071_z_vak_invdepth_jarkus.png" alt="hi" width="48%"/></a>
+<a href="assets/images/17000071_z_vak_invdepth_jarkus.png"><img src="assets/images/17000071_z_vak_invdepth_jarkus.png" alt="hi" width="95%"/></a>
 Comparison of bathymetry from Jarkus transect #17000071 (z), vaklodingen, and inverse-depth in selected region for analysis.
 
 **RWS Vaklodingen Data**
