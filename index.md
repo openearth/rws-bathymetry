@@ -27,7 +27,6 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 * **[Vaklodingen 2d map](http://opendap.deltares.nl/thredds/catalog/opendap/rijkswaterstaat/vaklodingen/catalog.html)**. Multibeam measurements performed with ships. Approximately 3 years of overpass, depending on the area. This dataset is mainly used for validation of satellite-derived products. 
 * **LIDAR 2d map**. Measurements from airborne mounted radar operating in the optical spectrum.
 
-
 **Water levels** 
 [Google Earth Engine code](https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd) which imports shapefiles of water level data, and displays the locations of the buoys and plots a subset of this data.
 
@@ -69,7 +68,7 @@ For this analysis, we have used Sentinel 2 and Landsat imagery up to present day
 
 ## [](#methodology)Methodology
 
-Using Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to present day are used for analysis. This image collection is sorted by cloud cover, and the percentage of images filtered based on the annual cloud coverage for the regions (~66% for the Netherlands).
+With Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to present day are used for analysis. This image collection is sorted by cloud cover, and the percentage of images filtered based on the annual cloud coverage for the regions (~66% for the Netherlands).
 
 
 ## [](#results)Results
@@ -82,19 +81,18 @@ Using Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to 
 **Water levels**
 
 <a href="assets/images/nes_L8_S2_overlap.png"><img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="center"/></a>
-Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free (<15% coverage) images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively.
+Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free (<15% coverage) images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively. These images were then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41). The movies below provide a visualization of the intertidal zone and waterlevel changes within the Ameland region.
 
-False colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
 <iframe src="https://player.vimeo.com/video/264566972?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/264566972">False colour L8 and S2 sorted by water level</a> from <a href="https://vimeo.com/user83949260">Christine Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+False colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy. 
 
-RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
 <iframe src="https://player.vimeo.com/video/264566971?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/264566971">RGB L8 and S2 sorted by water level</a> from <a href="https://vimeo.com/user83949260">Christine Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
 
 [Code](https://code.earthengine.google.com/38a551ad6f10413f5ede7daafc30c97b) which creates and exports above videos.
 
-Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and cloud cover, then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41).
 
 **Jarkus transects**
 <a href="assets/images/3002500_jarkus_region.png"><img src="assets/images/3002500_jarkus_region.png" alt="hi"  class="inline" width="95%"/></a>
@@ -107,10 +105,20 @@ Jarkus transect #3000720 and region selected for analysis. Region centered at (5
 <a href="assets/images/3000720_z_vak_invdepth_jarkus.png"><img src="assets/images/3000720_z_vak_invdepth_jarkus.png" alt="hi"  class="inline" width="95%"/></a>
 Comparison of bathymetry from Jarkus transect #33000720 (z), vaklodingen, and inverse-depth in selected region for analysis.
 
+<a href="assets/images/4005903_jarkus_region.png"><img src="assets/images/4005903_jarkus_region.png" alt="hi" width="95%"/></a>
+Jarkus transect #4005903 and region selected for analysis. Region centered at (5.16, 53.35).
+<a href="assets/images/4005903_z_vak_invdepth_jarkus.png"><img src="assets/images/4005903_z_vak_invdepth_jarkus.png" alt="hi" width="95%"/></a>
+Comparison of bathymetry from Jarkus transect #4005903 (z), vaklodingen, and inverse-depth in selected region for analysis.
+
 <a href="assets/images/17000071_jarkus_region.png"><img src="assets/images/17000071_jarkus_region.png" alt="hi" width="95%"/></a>
-Jarkus transect #3000720 and region selected for analysis. Region centered at (3.56, 51.40).
+Jarkus transect #17000071 and region selected for analysis. Region centered at (3.56, 51.40).
 <a href="assets/images/17000071_z_vak_invdepth_jarkus.png"><img src="assets/images/17000071_z_vak_invdepth_jarkus.png" alt="hi" width="95%"/></a>
 Comparison of bathymetry from Jarkus transect #17000071 (z), vaklodingen, and inverse-depth in selected region for analysis.
+
+<a href="assets/images/16001165_jarkus_region.png"><img src="assets/images/16001165_jarkus_region.png" alt="hi" width="95%"/></a>
+Jarkus transect #16001165 and region selected for analysis. Region centered at (3.53, 51.58).
+<a href="assets/images/16001165_z_vak_invdepth_jarkus.png"><img src="assets/images/16001165_z_vak_invdepth_jarkus.png" alt="hi" width="95%"/></a>
+Comparison of bathymetry from Jarkus transect #16001165 (z), vaklodingen, and inverse-depth in selected region for analysis.
 
 **RWS Vaklodingen Data**
 
@@ -132,6 +140,10 @@ Visual comparison of the vaklodingen data and the reconstructed bathymetry from 
 </div>
 
 On the top left a sample of the reconstructed bathymetry near Ameland is pictured. On the top right shows a visual representation of the absolute correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation and red represents areas of lower correlation between data. On the bottom left, 5000 points within the above image were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the bottom right, when points are randomly sampled accross highly correlated regions (indicated by green regions), a more evident relationship is measured in both shallow and deeper areas. Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry.
+
+A regression of 
+_z_ = -6.3242 _x_<sup>4</sup> + 33.965 _x_<sup>3</sup> - 72.483 _x_<sup>2</sup> + 74.831 _x_ - 29.659
+was found to best represent the relationship between derived water occurrence, _x_, and depth, _z_,  with a correlation coeffecient _R_<sup>2</sup> = 0.9156.
 
 <div id="images">
   <a href="assets/images/westerschelde_reconstructed_bathymetry.png">
