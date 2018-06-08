@@ -122,9 +122,13 @@ Comparison of bathymetry from Jarkus transect #16001165 (z), vaklodingen, and in
 
 **RWS Vaklodingen Data**
 
-![Alt Text](assets/images/ameland_vaklodingen_bathymetry.gif)
-
-Visual comparison of the vaklodingen data and the reconstructed bathymetry from this project.
+<div id="images">
+  <a href="assets/images/westerschelde_reconstructed_bathymetry.png">
+  <img class="doublefig" src="assets/images/westerschelde_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
+  <a href="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png">
+  <img class="doublefig" src="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
+</div>
+On the top left a sample of the reconstructed bathymetry of the Westerschelde is pictured. On the top right shows a visual representation of the absolute correlation between the vaklodingen and the reconstructed bathymetry in the intertidal regions. Green represents areas of high correlation, and red represents areas of lower correlation between data.
 
 <div id="images">
   <a href="assets/images/ameland_reconstructed_bathymetry.png">
@@ -138,21 +142,15 @@ Visual comparison of the vaklodingen data and the reconstructed bathymetry from 
 <a href="assets/images/scatter_plot_high_correlation.png">
   <img class="doublefig" src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="48%"/></a>
 </div>
-
 On the top left a sample of the reconstructed bathymetry near Ameland is pictured. On the top right shows a visual representation of the absolute correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation and red represents areas of lower correlation between data. On the bottom left, 5000 points within the above image were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the bottom right, when points are randomly sampled accross highly correlated regions (indicated by green regions), a more evident relationship is measured in both shallow and deeper areas. Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry.
 
 A regression of 
 _z_ = -6.3242 _x_<sup>4</sup> + 33.965 _x_<sup>3</sup> - 72.483 _x_<sup>2</sup> + 74.831 _x_ - 29.659
 was found to best represent the relationship between derived water occurrence, _x_, and depth, _z_,  with a correlation coeffecient _R_<sup>2</sup> = 0.9156.
 
-<div id="images">
-  <a href="assets/images/westerschelde_reconstructed_bathymetry.png">
-  <img class="doublefig" src="assets/images/westerschelde_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
-  <a href="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png">
-  <img class="doublefig" src="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
-</div>
-On the top left a sample of the reconstructed bathymetry of the Westerschelde is pictured. On the top right shows a visual representation of the absolute correlation between the vaklodingen and the reconstructed bathymetry in the intertidal regions. Green represents areas of high correlation, and red represents areas of lower correlation between data. 
+<a href="assets/images/ameland_vaklodingen_bathymetry.gif">![Alt Text](assets/images/ameland_vaklodingen_bathymetry.gif)</a>
 
+Visual comparison of the vaklodingen data and the reconstructed bathymetry from this project.
 
 
 ## [](#ref)References
