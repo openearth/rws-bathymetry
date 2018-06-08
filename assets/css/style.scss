@@ -3,13 +3,12 @@
 
 @import 'jekyll-theme-cayman';
 
-figure {
-    display: table;
+.doublefig {
+    width: 50%;
+    float: left;
+    text-align: center;
 }
-img, figcaption {
-    display: table-cell;
-    vertical-align: bottom;
-}
-figcaption {
-    padding-left: 4px;
+
+#images{
+    text-align:center;
 }
