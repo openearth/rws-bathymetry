@@ -32,16 +32,21 @@ As a rich data country, The Netherlands is monitoring its 350 km of coast at a y
 [Google Earth Engine code](https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd) which imports shapefiles of water level data, and displays the locations of the buoys and plots a subset of this data.
 
 **Jarkus transects**
-<div>
-  <a href="assets/images/westerschelde_jarkus_transects.png"><img src="assets/images/westerschelde_jarkus_transects.png" alt="hi"  class="inline" width="48%"/></a>
-  <a href="assets/images/ameland_jarkus_transects.png"><img src="assets/images/ameland_jarkus_transects.png" alt="hi"  class="inline" width="48%"/></a>
+<div id="images">
+  <a href="assets/images/westerschelde_jarkus_transects.png">
+  <img class="doublefig" src="assets/images/westerschelde_jarkus_transects.png" alt="hi"  class="inline" width="48%"/></a>
+  <a href="assets/images/ameland_jarkus_transects.png">
+  <img class="doublefig" src="assets/images/ameland_jarkus_transects.png" alt="hi"  class="inline" width="48%"/></a>
 </div>
 Jarkus transects for the Westerschelde (left) and Ameland (right) regions.
 
 **RWS Vaklodingen Data**
-
-<a href="assets/images/westerschelde_rws_vaklodingen.png"><img src="assets/images/westerschelde_rws_vaklodingen.png" alt="hi" class="inline" width="48%"/></a>
-<a href="assets/images/ameland_rws_vaklodingen.png"><img src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="48%"/></a>
+<div id="images">
+  <a href="assets/images/westerschelde_rws_vaklodingen.png">
+  <img class="doublefig" src="assets/images/westerschelde_rws_vaklodingen.png" alt="hi" class="inline" width="48%"/></a>
+  <a href="assets/images/ameland_rws_vaklodingen.png">
+  <img class="doublefig" src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="48%"/></a>
+</div>
 Vaklodingen data for the Westerschelde and Ameland regions. A total of 90 Vaklodingen images, measured annually, between 2010 and 2015 are combined to create a mosaic of bathymetry along the Dutch coastline.
 
 ### [](#satellites)Remote sensing data
@@ -50,8 +55,12 @@ Vaklodingen data for the Westerschelde and Ameland regions. A total of 90 Vaklod
 * **TripleSat**. Commercial Satellite sensor, made available by NSO (Netherlands Space Office).
 * **RapidEye**. Commercial Satellite sensor, made available by NSO (Netherlands Space Office).
 
-<a href="assets/images/westerschelde_s2_rgb.png"><img src="assets/images/westerschelde_s2_rgb.png" alt="hi" class="inline" width="49%"/></a>
-<a href="assets/images/ameland_s2_rgb.png"><img src="assets/images/ameland_s2_rgb.png" alt="hi" class="inline" width="49%"/></a>
+<div id="images">
+  <a href="assets/images/westerschelde_s2_rgb.png">
+  <img class="doublefig" src="assets/images/westerschelde_s2_rgb.png" alt="hi" class="inline" width="49%"/></a>
+  <a href="assets/images/ameland_s2_rgb.png">
+  <img class="doublefig" src="assets/images/ameland_s2_rgb.png" alt="hi" class="inline" width="49%"/></a>
+</div>
 For this analysis, we have used Sentinel 2 and Landsat imagery up to present day. A sample of cloud-free satellite imagery from Sentinel 2 available for the regions of interest are displayed above. 
 
 ### [](#additional)Additional data
@@ -89,12 +98,12 @@ Images from Landsat 8 and Sentinel 2, filtered by years 2015 to the present and 
 
 **Jarkus transects**
 <a href="assets/images/3002500_jarkus_region.png"><img src="assets/images/3002500_jarkus_region.png" alt="hi"  class="inline" width="95%"/></a>
-Jarkus transect #3002500 and region selected for analysis, located [].
+Jarkus transect #3002500 and region selected for analysis. Region centered at (5.97, 53.46).
 <a href="assets/images/3002500_z_vak_invdepth_jarkus.png"><img src="assets/images/3002500_z_vak_invdepth_jarkus.png" alt="hi"  class="inline" width="95%"/></a>
 Comparison of bathymetry from Jarkus transect #3002500 (z), vaklodingen, and inverse-depth in selected region for analysis.
 
 <a href="assets/images/3000720_jarkus_region.png"><img src="assets/images/3000720_jarkus_region.png" alt="hi"  class="inline" width="95%"/></a>
-Jarkus transect #3000720 and region selected for analysis, located .
+Jarkus transect #3000720 and region selected for analysis. Region centered at (5.68, 53.47).
 <a href="assets/images/3000720_z_vak_invdepth_jarkus.png"><img src="assets/images/3000720_z_vak_invdepth_jarkus.png" alt="hi"  class="inline" width="95%"/></a>
 Comparison of bathymetry from Jarkus transect #33000720 (z), vaklodingen, and inverse-depth in selected region for analysis.
 
@@ -109,15 +118,27 @@ Comparison of bathymetry from Jarkus transect #17000071 (z), vaklodingen, and in
 
 Visual comparison of the vaklodingen data and the reconstructed bathymetry from this project.
 
-<a href="assets/images/ameland_reconstructed_bathymetry.png"><img src="assets/images/ameland_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
-<a href="assets/images/ameland_intertidal_bathymetry_correlation_map.png"><img src="assets/images/ameland_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
-<a href="assets/images/scatter_plot_randomly_sampled.png"><img src="assets/images/scatter_plot_randomly_sampled.png" alt="hi" class="inline" width="48%"/></a>
-<a href="assets/images/scatter_plot_high_correlation.png"><img src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="48%"/></a>
+<div id="images">
+  <a href="assets/images/ameland_reconstructed_bathymetry.png">
+  <img class="doublefig" src="assets/images/ameland_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
+  <a href="assets/images/ameland_intertidal_bathymetry_correlation_map.png">
+  <img class="doublefig" src="assets/images/ameland_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
+</div>
+<div id="images">
+<a href="assets/images/scatter_plot_randomly_sampled.png">
+  <img class="doublefig" src="assets/images/scatter_plot_randomly_sampled.png" alt="hi" class="inline" width="48%"/></a>
+<a href="assets/images/scatter_plot_high_correlation.png">
+  <img class="doublefig" src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="48%"/></a>
+</div>
 
 On the top left a sample of the reconstructed bathymetry near Ameland is pictured. On the top right shows a visual representation of the absolute correlation between the vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation and red represents areas of lower correlation between data. On the bottom left, 5000 points within the above image were randomly sampled between the vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the bottom right, when points are randomly sampled accross highly correlated regions (indicated by green regions), a more evident relationship is measured in both shallow and deeper areas. Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry.
 
-<a href="assets/images/westerschelde_reconstructed_bathymetry.png"><img src="assets/images/westerschelde_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
-<a href="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png"><img src="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
+<div id="images">
+  <a href="assets/images/westerschelde_reconstructed_bathymetry.png">
+  <img class="doublefig" src="assets/images/westerschelde_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
+  <a href="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png">
+  <img class="doublefig" src="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
+</div>
 On the top left a sample of the reconstructed bathymetry of the Westerschelde is pictured. On the top right shows a visual representation of the absolute correlation between the vaklodingen and the reconstructed bathymetry in the intertidal regions. Green represents areas of high correlation, and red represents areas of lower correlation between data. 
 
 
