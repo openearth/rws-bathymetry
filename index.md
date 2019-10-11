@@ -69,10 +69,10 @@ Analysis and export of images have been done for the whole Dutch coast, and exte
 Scene boundary effects were identified, where edges of individual satellite images are visible, in an earlier version of the algorithm. These have been reduced in the current implementation by filtering images that cover >= 75% of the analysis region.
 
 <div id="images">
-  <a href="assets/images/scene_boundaries.png">
-  <img class="doublefig" src="assets/images/scene_boundaries.png" alt="hi"  class="inline" width="48%"/></a>
-  <a href="assets/images/scene_boundaries_solved.png">
-  <img class="doublefig" src="assets/images/scene_boundaries_solved.png" alt="hi"  class="inline" width="48%"/></a>
+  <a href="assets/images/scene_boundaries.PNG">
+  <img class="doublefig" src="assets/images/scene_boundaries.PNG" alt="hi"  class="inline" width="48%"/></a>
+  <a href="assets/images/scene_boundaries_solved.PNG">
+  <img class="doublefig" src="assets/images/scene_boundaries_solved.PNG" alt="hi"  class="inline" width="48%"/></a>
 </div>
 <span style="font-size:10pt">**a)** Scene boundaries visible from previous version of algorithm. **b)** Reduction of scene boundaries </span>
 
@@ -81,8 +81,8 @@ Scene boundary effects were identified, where edges of individual satellite imag
 Splitting regions of evaluation into tiles corresponding with SlippyMap tile boundaries was to . Dark pixel subtraction from darkest pixel in water causes variation in results across tiles, resulting in visible tile boundaries. A different approach to normalization and analysis boundaries is required to eliminate boundary discontinuities. Future work to create a baseline of depth proxy to scale images, rather than using dark pixel subtraction for scaling, should reduce or remove these effects.
 
 <div id="images">
-  <a href="assets/images/scene_boundaries.png">
-  <img class="doublefig" src="assets/images/tile_boundaries_visible.png" alt="hi"  class="inline"/></a>
+  <a href="assets/images/tile_boundaries_visible.PNG">
+  <img class="doublefig" src="assets/images/tile_boundaries_visible.PNG" alt="hi"  class="inline"/></a>
 </div>
 <span style="font-size:10pt">Boundaries visible from tile geometries.</span>
 
