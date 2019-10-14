@@ -2,9 +2,160 @@
 layout: default
 ---
 
-This project is carried our in the frame of KPP-CIP projects in 2018. The project **KPPCIP2018 IV INNO Satellieten en bathymetrie voor monitoring kustmorfologie** proposed by  _Deltares_ has been awarded by _Rijkswaterstaat_ in November 2017. 
+This project is carried our in the frame of KPP-CIP projects in 2018 and 2019. The project **PPCIP2018 IV INNO and KPPCIP2019 Satellieten en bathymetrie voor monitoring kustmorfologie** proposed by  _Deltares_ has been awarded by _Rijkswaterstaat_ in November 2017. 
 
 * * *
+## [](#map2019) SDB Map 2019
+
+<div id="map" style="min-height: 600px">
+  <div id="timelabel"></div>
+  <div id="panel" class="pin-bottom pt36 bg-white z100 ">
+      <div class="bg-white round relative w600">
+          <div class="pin-top pad1 z200 col12 bg-white">
+              <input class="timeslider col12 fr" id="timeslider" title="slider" type="range" min="0" max="1.5" step="0.1" value="0" />
+              <input class="speedslider col12 fr" id="speedslider" title="slider" type="range" min="0.25" max="0.5" step="0.005" value="0.375" />
+          </div>
+          <div id="playbutton" class="button z100" onclick="togglePlayback()">Play</div>
+      </div>
+  </div>
+</div>
+
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VubmFkaXkiLCJhIjoiMm9WN3VWQSJ9.b9s_EXvxcqiAbaf5GzrEnA'
+
+  // let tilesPath = "https://storage.googleapis.com/deltares-video-map/mapbox-test/test1/{z}/{x}/{y}.webm"
+  let tilesPath = "https://storage.googleapis.com/deltares-video-map/sdb-rgb-v3.3-video/{z}/{x}/{y}.webm"
+  // let tilesPath = "http://localhost:9966/media/sdb-rgb-test4-video/{z}/{x}/{y}.webm"
+  // let tilesPath = "http://127.0.0.1:4000/media/sdb-rgb-test4-video/{z}/{x}/{y}.webm"
+
+  let zoomMin = 4
+  let zoomMax = 13
+
+  let map = null
+
+  let times = [
+    "2015-01-01 ... 2017-01-01",
+    "2015-04-01 ... 2017-04-01",
+    "2015-07-01 ... 2017-07-01",
+    "2015-10-01 ... 2017-10-01",
+    "2016-01-01 ... 2018-01-01",
+    "2016-04-01 ... 2018-04-01",
+    "2016-07-01 ... 2018-07-01",
+    "2016-10-01 ... 2018-10-01",
+    "2017-01-01 ... 2019-01-01",
+    "2017-04-01 ... 2019-04-01",
+    "2017-07-01 ... 2019-07-01",
+    "2017-10-01 ... 2019-10-01",
+    "2018-01-01 ... 2020-01-01",
+    "2018-04-01 ... 2020-04-01",
+    "2018-07-01 ... 2020-07-01",
+    "2018-10-01 ... 2020-10-01"
+  ]
+
+  var videoStyle = {
+      "version": 8,
+      "sources": {
+          "source1": {
+              "type": "video-tiled",
+              "tiles": [ tilesPath ],
+              tileSize: 256,
+              playbackRate: 0.375,
+              minzoom: zoomMin,
+              maxzoom: zoomMax,
+              scheme: "xyz",
+              geometry: []
+          },
+          "satellite": {
+              "type": "raster",
+              "url": "mapbox://mapbox.satellite",
+              "tileSize": 256
+          }
+      },
+      "layers": [{
+          "id": "background",
+          "type": "background",
+          "paint": {
+              "background-color": "rgb(4,7,14)"
+          }
+      }, {
+          "id": "satellite",
+          "type": "raster",
+          "source": "satellite"
+      }, {
+          "id": "layer1",
+          "type": "raster",
+          "source": "source1"
+      }]
+  };
+
+  function onLoad() {
+    map = new mapboxgl.Map({
+      container: 'map',
+      // pitch: 42, // pitch in degrees
+      // bearing: 26, // bearing in degrees    
+      zoom: 9.876559623103208,
+      center: [6.657906115369997, 53.58250382811332],
+      style: videoStyle
+      // style: 'mapbox://styles/mapbox/dark-v9'
+    });
+    
+    // add controls
+    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+    map.addControl(new mapboxgl.GeolocateControl());
+    // map.addControl(new mapboxgl.AttributionControl({compact: true}))
+    // map.addControl(new mapboxgl.ScaleControl());
+    map.addControl(new mapboxgl.FullscreenControl());  
+
+    let slider = document.getElementById('timeslider')
+    let timelabel = document.getElementById('timelabel')
+
+    map.on('style.load', () => {
+        let player = map.getSource('source1').player
+
+        player.onTimeChanged = t => {
+            slider.value = t
+            timelabel.textContent = 'Time: ' + times[Math.floor(t * 10)]
+        }
+
+        slider.addEventListener('input', function() {
+            let currentTime = parseFloat(this.value)
+
+            player.setCurrentTime(currentTime)
+        });
+
+        let sliderSpeed = document.getElementById('speedslider')
+
+        sliderSpeed.addEventListener('input', function() {
+            speed = parseFloat(this.value)
+            getPlayer().playbackRate = speed
+        });
+    })
+  }
+
+  let playing = false;
+
+  function getPlayer() {
+      return map.getSource('source1').player
+  }
+
+  function togglePlayback() {
+      playing = !playing;
+
+      let button = document.getElementById('playbutton')
+      button.innerText = playing ? 'Pause' : 'Play'
+
+      if(playing) {                             
+          let dt = 50 // timer in ms
+          let step = 0.1 // step to seek for the next frame, depends on video FPS
+          getPlayer().playbackRate = parseFloat(document.getElementById('speedslider').value)
+          getPlayer().play(dt, step)
+      } else {
+          getPlayer().pause()
+      }
+  }
+
+</script>
 
 ## [](#intro)Introduction
 

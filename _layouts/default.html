@@ -8,8 +8,28 @@
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+    <script src='/mapbox/mapbox-gl.js'></script>
+    <link href='/mapbox/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://www.mapbox.com/base/latest/base.css" rel="stylesheet" />
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body, #map { height: 100%; }
+        #panel { margin-left: 5px; margin-bottom: 35px; width: 332px; height: 50px; background-color: white; opacity: 0.8; }
+        #playbutton { top: 6px; left: 338px; }
+        #timelabel {
+            position: absolute;
+            top: 1%;
+            left: 1%;
+            z-index: 100;
+            text-shadow: 1px 1px 2px #000000e0, 0 0 15px #f8f8f8;
+            font-size: 16px;
+            color: seashell;
+        }
+        #speedslider { margin-top: 6px; }
+    </style>
   </head>
-  <body>
+  <body onload="onLoad()">
     <section class="page-header">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
