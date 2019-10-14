@@ -157,151 +157,84 @@ This project is carried our in the frame of KPP-CIP projects in 2018 and 2019. T
 
 </script>
 
-## [](#intro)Introduction
+<p align='right'><a href="./2018.html">2018 ></a></p>
 
-Within this project, _Deltares_ is asked to look at available satellite images in the period 2015-2017 and explore ways to derive bathymetry from those images. Eventually Deltares provides a calibrated bathymetry for two areas of interest and compares the obtained bathymetry with _in-situ_ data collected via standard measurement methods.
+# [](#intro)Introduction
 
-## [](#areas)Areas of interest
+This is a continuation of research from the 2018 KPP project. Results from research in 2018 available at:
+* [**2018**](./2018.html) - Within this project, _Deltares_ was asked to look at available satellite images in the period 2015-2017 and explore ways to derive bathymetry from those images. Eventually Deltares provided a calibrated bathymetry for two areas of interest and compared the obtained bathymetry with _in-situ_ data collected via standard measurement methods.
 
-The two areas are both located in the North Sea area: the inlet of Ameland island in the Wadden Sea and the Western Scheldt outerdelta. These areas are characterised by active coastal morphodynamics, especially in the shallow waters. The use of remote sensing images for these areas helps to capture higher frequency dynamics, too costly and spatially confined to be fully detected by standard in-situ measurements.
+* [**2019**](#2019) - Improvements to the existing satellite derived bathymetry (SDB) algorithm are explored for the Dutch coast.
 
-<a href="assets/images/roi.png"><img src="assets/images/roi.png" alt="hi" class="inline"/></a>
-
-
-## [](#data)Data availability
-
-As a rich data country, The Netherlands is monitoring its 350 km of coast at a yearly rate. For the purpose of his study, several datasets of measurement observations are explored, analysed, and compared against remote sensing products. Here is a list of data used during the project.
-
-### [](#insitu)In-situ data
-* **[Water levels](http://matroos.deltares.nl/)**. Measurements from devices in the surroundings of the areas of interest have been downloaded from Matroos.
-* **[Jarkus transects](https://github.com/openearth/jarkus)**. Profiles measured along the Dutch coast, measured on a yearly basis with singlebeam mounted on boats and lidar sensor mounted on planes. This dataset is mainly used for validation of satellite-derived products. 
-* **[Vaklodingen 2d map](http://opendap.deltares.nl/thredds/catalog/opendap/rijkswaterstaat/vaklodingen/catalog.html)**. Multibeam measurements performed with ships. Approximately 3 years of overpass, depending on the area. This dataset is mainly used for validation of satellite-derived products. 
-* **LIDAR 2d map**. Measurements from airborne mounted radar operating in the optical spectrum.
-
-**Water levels** 
-[Google Earth Engine code](https://code.earthengine.google.com/e02d1005a3aac1c10d09fe85f23a8edd) which imports shapefiles of water level data, and displays the locations of the buoys and plots a subset of this data.
-
-**Jarkus transects**
-<div id="images">
-  <a href="assets/images/westerschelde_jarkus_transects.png">
-  <img class="doublefig" src="assets/images/westerschelde_jarkus_transects.png" alt="hi"  class="inline" width="48%"/></a>
-  <a href="assets/images/ameland_jarkus_transects.png">
-  <img class="doublefig" src="assets/images/ameland_jarkus_transects.png" alt="hi"  class="inline" width="48%"/></a>
-</div>
-Jarkus transects for the Westerschelde (left) and Ameland (right) regions.
-
-**RWS Vaklodingen Data**
-<div id="images">
-  <a href="assets/images/westerschelde_rws_vaklodingen.png">
-  <img class="doublefig" src="assets/images/westerschelde_rws_vaklodingen.png" alt="hi" class="inline" width="48%"/></a>
-  <a href="assets/images/ameland_rws_vaklodingen.png">
-  <img class="doublefig" src="assets/images/ameland_rws_vaklodingen.png" alt="hi" class="inline" width="48%"/></a>
-</div>
-Vaklodingen data for the Westerschelde and Ameland regions. A total of 90 Vaklodingen images, measured annually, between 2010 and 2015 are combined to create a mosaic of bathymetry along the Dutch coastline.
-
-### [](#satellites)Remote sensing data
-* **Sentinel2**. European EO mission launched in 2015 (A) and 2017 (B). It provides multi-spectral data in the visible, near infrared and short wave infrared part of the spectrum.
-* **LandSat8**. American EO mission launched in 2013. It provides multi-spectral images thanks to the OLI (Operational Land Imager) and Thermal InfraRed sensors.
-* **TripleSat**. Commercial Satellite sensor, made available by NSO (Netherlands Space Office).
-* **RapidEye**. Commercial Satellite sensor, made available by NSO (Netherlands Space Office).
-
-<div id="images">
-  <a href="assets/images/westerschelde_s2_rgb.png">
-  <img class="doublefig" src="assets/images/westerschelde_s2_rgb.png" alt="hi" class="inline" width="49%"/></a>
-  <a href="assets/images/ameland_s2_rgb.png">
-  <img class="doublefig" src="assets/images/ameland_s2_rgb.png" alt="hi" class="inline" width="49%"/></a>
-</div>
-For this analysis, we have used Sentinel 2 and Landsat imagery up to present day. A sample of cloud-free satellite imagery from Sentinel 2 available for the regions of interest are displayed above. 
-
-### [](#additional)Additional data
-* **Cloud coverage**. The [Global 1-km Cloud Cover](http://www.earthenv.org/cloud) map is used to determine a threshold to automatically discard cloudy images.
-* **Bathymetric Products**. Processed data from a third commercial party. 
+***
+# [](#2019)2019
 
 ## [](#methodology)Methodology
 
-With Google Earth Engine, images from Sentinel 2 and Landsat 8 available up to present day are used for analysis. This image collection is sorted by cloud cover, and the percentage of images filtered based on the annual cloud coverage for the regions (~66% for the Netherlands).
+Starting in 2015, in steps of 3 months, satellite images within a 2 year time window are used to compute depth. All Sentinel-2 and Landsat8 images within the time window are filtered for least clouds, and NDWI is used to identify water versus land. The darkest water pixel is subtracted is done per image to normalize depth proxy across images. Taking the logarithm of this results, spectral values are scaled to percentiles and unit scaled to create a depth proxy. A quality score is computed from the cumulative distribution function of each pixel. A weight is assigned to each pixel in an image based on the green band reflectance value of that pixel compared to 70th to 80th percentile of those within a 200 pixel radius. The weight of each image is used to compute a weighted mean depth proxy image across all images.
 
+### [](#improvements)Improvements to Algorithm
 
-## [](#results)Results
-
-<iframe src="https://player.vimeo.com/video/273185380?loop=1&quality=1080p&autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/273185380">Bathymetry from Space, Wadenzee (2013-2018)</a> from <a href="https://vimeo.com/user18987785">Gennadii Donchyts</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
-### [](#validation)Validation and Comparison
-
-**Water levels**
-
-<a href="assets/images/nes_L8_S2_overlap.png"><img src="assets/images/nes_L8_S2_overlap.png" alt="hi" class="center"/></a>
-Water level measurements plotted in gray have been derived from a buoy off the coast of Nes, The Netherlands (5.7609, 53.4311). Corresponding cloud-free (<15% coverage) images between 2015 to the present from Landsat 8 and Sentinel 2 are plotted in red and blue, respectively. These images were then sorted by water level from in-situ Matroos data. Location in the Netherlands, along the North Sea (6.20, 53.41). The movies below provide a visualization of the intertidal zone and waterlevel changes within Ameland region.
-
-<iframe src="https://player.vimeo.com/video/264566972?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/264566972">False colour L8 and S2 sorted by water level</a> from <a href="https://vimeo.com/user83949260">Christine Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-False colour Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy. 
-
-<iframe src="https://player.vimeo.com/video/264566971?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/264566971">RGB L8 and S2 sorted by water level</a> from <a href="https://vimeo.com/user83949260">Christine Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-RGB Landsat 8 and Sentinel 2 images, sorted by water levels recorded at Nes buoy.
-
-[Code](https://code.earthengine.google.com/38a551ad6f10413f5ede7daafc30c97b) which creates and exports above videos.
-
-
-**Jarkus transects**
-<a href="assets/images/3002500_jarkus_region.png"><img src="assets/images/3002500_jarkus_region.png" alt="hi"  class="inline" width="95%"/></a>
-Jarkus transect #3002500 and region selected for analysis. Region centered at (5.97, 53.46).
-<a href="assets/images/3002500_z_vak_invdepth_jarkus.png"><img src="assets/images/3002500_z_vak_invdepth_jarkus.png" alt="hi"  class="inline" width="95%"/></a>
-Comparison of bathymetry from Jarkus transect #3002500 (z), Vaklodingen, and inverse-depth in selected region for analysis.
-
-<a href="assets/images/3000720_jarkus_region.png"><img src="assets/images/3000720_jarkus_region.png" alt="hi"  class="inline" width="95%"/></a>
-Jarkus transect #3000720 and region selected for analysis. Region centered at (5.68, 53.47).
-<a href="assets/images/3000720_z_vak_invdepth_jarkus.png"><img src="assets/images/3000720_z_vak_invdepth_jarkus.png" alt="hi"  class="inline" width="95%"/></a>
-Comparison of bathymetry from Jarkus transect #33000720 (z), Vaklodingen, and inverse-depth in selected region for analysis.
-
-<a href="assets/images/4005903_jarkus_region.png"><img src="assets/images/4005903_jarkus_region.png" alt="hi" width="95%"/></a>
-Jarkus transect #4005903 and region selected for analysis. Region centered at (5.16, 53.35).
-<a href="assets/images/4005903_z_vak_invdepth_jarkus.png"><img src="assets/images/4005903_z_vak_invdepth_jarkus.png" alt="hi" width="95%"/></a>
-Comparison of bathymetry from Jarkus transect #4005903 (z), Vaklodingen, and inverse-depth in selected region for analysis.
-
-<a href="assets/images/17000071_jarkus_region.png"><img src="assets/images/17000071_jarkus_region.png" alt="hi" width="95%"/></a>
-Jarkus transect #17000071 and region selected for analysis. Region centered at (3.56, 51.40).
-<a href="assets/images/17000071_z_vak_invdepth_jarkus.png"><img src="assets/images/17000071_z_vak_invdepth_jarkus.png" alt="hi" width="95%"/></a>
-Comparison of bathymetry from Jarkus transect #17000071 (z), Vaklodingen, and inverse-depth in selected region for analysis.
-
-<a href="assets/images/16001165_jarkus_region.png"><img src="assets/images/16001165_jarkus_region.png" alt="hi" width="95%"/></a>
-Jarkus transect #16001165 and region selected for analysis. Region centered at (3.53, 51.58).
-<a href="assets/images/16001165_z_vak_invdepth_jarkus.png"><img src="assets/images/16001165_z_vak_invdepth_jarkus.png" alt="hi" width="95%"/></a>
-Comparison of bathymetry from Jarkus transect #16001165 (z), Vaklodingen, and inverse-depth in selected region for analysis.
-
-**RWS Vaklodingen Data**
+Focus of the work in 2019 has been to reduce noise in the output data. This was achieved through improved spatio-temporal filtering when deriving bathymetry. Additionally, the algorithm was expanded to use three visible bands to estimate the water depth proxy, rather than only the green band in the 2018 algorithm. Significant improvements were achieved within the near-shore zone, where the old version of the algorithm generated noise in water depth estimates from wave and bright pixels, present in most of the satellite imagery.
 
 <div id="images">
-  <a href="assets/images/westerschelde_reconstructed_bathymetry.png">
-  <img class="doublefig" src="assets/images/westerschelde_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
-  <a href="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png">
-  <img class="doublefig" src="assets/images/westerschelde_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
+  <a href="assets/images/results-2018.png">
+  <img class="doublefig" src="assets/images/results-2018.png" alt="hi"  class="inline" width="48%"/></a>
+  <a href="assets/images/results-2019.png">
+  <img class="doublefig" src="assets/images/results-2019.png" alt="hi"  class="inline" width="48%"/></a>
 </div>
-On the top left a sample of the reconstructed bathymetry of the Westerschelde is pictured. On the top right shows a visual representation of the absolute correlation between the Vaklodingen and the reconstructed bathymetry in the intertidal regions. Green represents areas of high correlation, and red represents areas of lower correlation between data.
+<span style="font-size:10pt">**a)** Results using the previous version of the SDB algorithm (CIP2018). It uses four years of data (2013-2018) and the green band only. **b)** Results using the new version of the SDB algorithm (CIP2019). Uses two years of data (2015-2017) and red, green, blue band. The image is computed as a composite of water depth images estimated using visible bands separately.</span>
+
+### [](#spectral)Spectral Signatures of Intertidal and Subtidal Coastal Zones
+
+Sampling of Sentinel-2 images between 2016-2019 was done for selected regions along the Dutch coastline to understand the effects of depth, sediments, and seabed type on the optical spectral signature. For all available cloud-free images (981 total) during this time, 200 points were sampled within deep and intertidal zones, as pictured in the figure below. This gives a broad range of statistics and preparation for applying machine learning models to derive depth.
 
 <div id="images">
-  <a href="assets/images/ameland_reconstructed_bathymetry.png">
-  <img class="doublefig" src="assets/images/ameland_reconstructed_bathymetry.png" alt="hi" class="inline" width="48%"/></a>
-  <a href="assets/images/ameland_intertidal_bathymetry_correlation_map.png">
-  <img class="doublefig" src="assets/images/ameland_intertidal_bathymetry_correlation_map.png" alt="hi" class="inline" width="48%"/></a>
+  <a href="assets/images/deep_intertidal_zones.png">
+  <img class="doublefig" src="assets/images/deep_intertidal_zones.png" alt="hi"  class="inline"/></a>
 </div>
+<span style="font-size:10pt"> Regions selected as deep (<span style="color:blue">blue</span>) and intertidal (<span style="color:orange">orange</span>) zones for data sampling and investigation.</span>
+
+Red, green, and blue bands for the Sentinel-2 data show differences in reflectance between deep and intertidal zones. This demonstrates their use in computing satellite derived bathymetry, and will also provide more spectral information for dealing with varying seabed types.
+
 <div id="images">
-<a href="assets/images/scatter_plot_randomly_sampled.png">
-  <img class="doublefig" src="assets/images/scatter_plot_randomly_sampled.png" alt="hi" class="inline" width="48%"/></a>
-<a href="assets/images/scatter_plot_high_correlation.png">
-  <img class="doublefig" src="assets/images/scatter_plot_high_correlation.png" alt="hi" class="inline" width="48%"/></a>
+  <a href="assets/images/spectral_signatures.png">
+  <img class="doublefig" src="assets/images/spectral_signatures.png" alt="hi"  class="inline"/></a>
 </div>
-On the top left a sample of the reconstructed bathymetry near Ameland is pictured. On the top right shows a visual representation of the absolute correlation between the Vaklodingen and the reconstructed bathymetry. Green represents areas of high correlation and red represents areas of lower correlation between data. On the bottom left, 5000 points within the above image were randomly sampled between the Vaklodingen and reconstructed bathymetry. This provides a relationship between the probability of water occurrence and the measured bathymetry in the region. A strong correlation exists in shallow regions for the current algorithm. On the bottom right, when points are randomly sampled accross highly correlated regions (indicated by green regions), a more evident relationship is measured in both shallow and deeper areas. Improvements to the algorithm for deeper regions is ongoing, as well as determining the best regression method for relating the reconstructed bathymetry to measured bathymetry.
+<span style="font-size:10pt"> Differences in spectral signatures between points sampled across deep (<span style="color:blue">blue</span>) and intertidal (<span style="color:orange">orange</span>) regions. The depth of water is most distinguishable between red, green, and blue bands.</span>
 
-A regression of 
-_z_ = -6.3242 _x_<sup>4</sup> + 33.965 _x_<sup>3</sup> - 72.483 _x_<sup>2</sup> + 74.831 _x_ - 29.659
-was found to best represent the relationship between derived water occurrence, _x_, and depth, _z_,  with a correlation coeffecient _R_<sup>2</sup> = 0.9156.
+## [](video)Video Map Tiles
 
-<a href="assets/images/ameland_vaklodingen_bathymetry.gif">![Alt Text](assets/images/ameland_vaklodingen_bathymetry.gif)</a>
+For an easy exploration of the SDB estimates, a map-based web tool has been created. The tool includes functionality to quickly explore the time-dependent SDB estimates using a new technology being developed at Deltares called Video Map Tiles. Video Map Tiles provide a way to convert spatio-temporal datasets into a set of tiled videos, generated at different zoom levels. The classical SlippyMap tiles, usually used to stream static map tiles, such as Google Map or OpenStreetMap, are used as a standard to host Video Map Tiles. To visualize Video Map Tiles, we have extended the Mapbox web library to support the streaming and playing of multiple video tiles with proper time synchronization.
 
-Visual comparison of the Vaklodingen data and the reconstructed bathymetry from this project.
+Analysis and export of images have been done for the whole Dutch coast, and extended to other areas in the North Sea. These are at a scale of 19.109 m, corresponding to zoom level 13 of SlippyMap tile resolution.
 
+<div id="images">
+  <a href="assets/images/exported_tiles.png">
+  <img class="doublefig" src="assets/images/exported_tiles.png" alt="hi"  class="inline"/></a>
+</div>
+<span style="font-size:10pt"> Overview of the output tile boundaries used to export the final SDB estimates. Large squares represent SlippyMap tiles at zoom level 9 and the dark polygon defines the extent of the RWS Vaklodingen dataset.</span>
 
-## [](#ref)References
+### [](sceneboundary)Scene Boundary Effects
+
+Scene boundary effects were identified, where edges of individual satellite images are visible, in an earlier version of the algorithm. These have been reduced in the current implementation by filtering images that cover >= 75% of the analysis region.
+
+<div id="images">
+  <a href="assets/images/scene_boundaries.PNG">
+  <img class="doublefig" src="assets/images/scene_boundaries.PNG" alt="hi"  class="inline" width="48%"/></a>
+  <a href="assets/images/scene_boundaries_solved.PNG">
+  <img class="doublefig" src="assets/images/scene_boundaries_solved.PNG" alt="hi"  class="inline" width="48%"/></a>
+</div>
+<span style="font-size:10pt">**a)** Scene boundaries visible from previous version of algorithm. **b)** Reduction of scene boundaries </span>
+
+### [](tileboundary)Tile Boundary Effects
+
+Splitting regions of evaluation into tiles corresponding with SlippyMap tile boundaries was to . Dark pixel subtraction from darkest pixel in water causes variation in results across tiles, resulting in visible tile boundaries. A different approach to normalization and analysis boundaries is required to eliminate boundary discontinuities. Future work to create a baseline of depth proxy to scale images, rather than using dark pixel subtraction for scaling, should reduce or remove these effects.
+
+<div id="images">
+  <a href="assets/images/tile_boundaries_visible.PNG">
+  <img class="doublefig" src="assets/images/tile_boundaries_visible.PNG" alt="hi"  class="inline"/></a>
+</div>
+<span style="font-size:10pt">Boundaries visible from tile geometries.</span>
+
+***
