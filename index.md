@@ -2,9 +2,12 @@
 layout: default
 ---
 
-This project is carried our in the frame of KPP-CIP projects in 2018 and 2019. The project **PPCIP2018 IV INNO and KPPCIP2019 Satellieten en bathymetrie voor monitoring kustmorfologie** proposed by  _Deltares_ has been awarded by _Rijkswaterstaat_ in November 2017. 
+This project is carried our in the frame of KPP-CIP projects in 2018 and 2019. The project **KPPCIP2018 IV INNO and KPPCIP2019 Satellieten en bathymetrie voor monitoring kustmorfologie** proposed by  _Deltares_ has been awarded by _Rijkswaterstaat_ in November 2017.
 
 * * *
+
+<p align='right'><a href="./2018.html">2018 ></a></p>
+
 ## [](#map2019) SDB Map 2019
 
 <div id="map" style="min-height: 600px">
@@ -99,7 +102,7 @@ This project is carried our in the frame of KPP-CIP projects in 2018 and 2019. T
       style: videoStyle
       // style: 'mapbox://styles/mapbox/dark-v9'
     });
-    
+
     // add controls
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
     map.addControl(new mapboxgl.GeolocateControl());
@@ -157,8 +160,6 @@ This project is carried our in the frame of KPP-CIP projects in 2018 and 2019. T
 
 </script>
 
-<p align='right'><a href="./2018.html">2018 ></a></p>
-
 # [](#intro)Introduction
 
 This is a continuation of research from the 2018 KPP project. Results from research in 2018 available at:
@@ -171,7 +172,7 @@ This is a continuation of research from the 2018 KPP project. Results from resea
 
 ## [](#methodology)Methodology
 
-Starting in 2015, in steps of 3 months, satellite images within a 2 year time window are used to compute depth. All Sentinel-2 and Landsat8 images within the time window are filtered for least clouds, and NDWI is used to identify water versus land. The darkest water pixel is subtracted is done per image to normalize depth proxy across images. Taking the logarithm of this results, spectral values are scaled to percentiles and unit scaled to create a depth proxy. A quality score is computed from the cumulative distribution function of each pixel. A weight is assigned to each pixel in an image based on the green band reflectance value of that pixel compared to 70th to 80th percentile of those within a 200 pixel radius. The weight of each image is used to compute a weighted mean depth proxy image across all images.
+Starting in 2015, in steps of 3 months, satellite images within a 2 year time window are used to compute depth. All Sentinel-2 and Landsat8 images within the time window are filtered for least clouds, and NDWI is used to identify water versus land. The 2 year time window is used to have sufficient images to reduce effects of clouds, waves, sediments, or other contributing noise. The darkest water pixel is subtracted per image to normalize depth proxy across images. Taking the logarithm of this results, spectral values are scaled to percentiles and unit scaled to create a depth proxy. A quality score is computed from the cumulative distribution function of each pixel. A weight is assigned to each pixel in an image based on the green band reflectance value of that pixel compared to 70th to 80th percentile of those within a 200 pixel radius. The weight of each image is used to compute a weighted mean depth proxy image across all images.
 
 ### [](#improvements)Improvements to Algorithm
 
@@ -183,11 +184,11 @@ Focus of the work in 2019 has been to reduce noise in the output data. This was 
   <a href="assets/images/results-2019.png">
   <img class="doublefig" src="assets/images/results-2019.png" alt="hi"  class="inline" width="48%"/></a>
 </div>
-<span style="font-size:10pt">**a)** Results using the previous version of the SDB algorithm (CIP2018). It uses four years of data (2013-2018) and the green band only. **b)** Results using the new version of the SDB algorithm (CIP2019). Uses two years of data (2015-2017) and red, green, blue band. The image is computed as a composite of water depth images estimated using visible bands separately.</span>
+<span style="font-size:10pt">**a)** Results using the previous version of the SDB algorithm (CIP2018). It uses four years of data (2013-2018) and the green band only. **b)** Results using the new version of the SDB algorithm (CIP2019). Uses two years of data (2015-2017) and red, green, blue band The image is computed as a composite of water depth images estimated using visible bands separately.</span>
 
 ### [](#spectral)Spectral Signatures of Intertidal and Subtidal Coastal Zones
 
-Sampling of Sentinel-2 images between 2016-2019 was done for selected regions along the Dutch coastline to understand the effects of depth, sediments, and seabed type on the optical spectral signature. For all available cloud-free images (981 total) during this time, 200 points were sampled within deep and intertidal zones, as pictured in the figure below. This gives a broad range of statistics and preparation for applying machine learning models to derive depth.
+Sampling of Sentinel-2 images between 2016-2019 was done for selected regions along the Dutch coastline to understand the effects of depth, sediments, and seabed type on the optical spectral signature. For all available cloud-free images (981 total) during this time, 200 points were randomly sampled within deep and intertidal zones, as pictured in the figure below. This was to study the effects of the depth on the spectral signature across all bands. This also gives us a broad range of statistics in preparation for applying machine learning models to derive depth.
 
 <div id="images">
   <a href="assets/images/deep_intertidal_zones.png">
@@ -229,12 +230,10 @@ Scene boundary effects were identified, where edges of individual satellite imag
 
 ### [](tileboundary)Tile Boundary Effects
 
-Splitting regions of evaluation into tiles corresponding with SlippyMap tile boundaries was to . Dark pixel subtraction from darkest pixel in water causes variation in results across tiles, resulting in visible tile boundaries. A different approach to normalization and analysis boundaries is required to eliminate boundary discontinuities. Future work to create a baseline of depth proxy to scale images, rather than using dark pixel subtraction for scaling, should reduce or remove these effects.
+Splitting regions of evaluation into tiles corresponding with SlippyMap tile boundaries was to split the Dutch coast into regions of analysis small enough to process using Earth Engine. SlippyMap tiles at level 9 were determined to be an optimal size. These are smaller than Landsat or Sentinel images, allowing for more images for analysis and fewer scene boundaries across any given tile. They are also large enough for reasonable computation time and video tile performance. Dark pixel subtraction from darkest pixel in water causes variation in results across tiles, resulting in visible tile boundaries. A different approach to normalization and analysis boundaries is required to eliminate boundary discontinuities. Future work could eliminate these tile boundary effects. Precomputing a mean or median image from the images available in a time window across the whole region, rather than per tile, should reduce or remove these effects. This is suggested as future work to improve the algorithm.
 
 <div id="images">
   <a href="assets/images/tile_boundaries_visible.PNG">
   <img class="doublefig" src="assets/images/tile_boundaries_visible.PNG" alt="hi"  class="inline"/></a>
 </div>
 <span style="font-size:10pt">Boundaries visible from tile geometries.</span>
-
-***
