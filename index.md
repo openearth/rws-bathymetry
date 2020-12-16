@@ -2,163 +2,13 @@
 layout: default
 ---
 
-This project is carried our in the frame of KPP-CIP projects in 2018 and 2019. The project **KPPCIP2018 IV INNO and KPPCIP2019 Satellieten en bathymetrie voor monitoring kustmorfologie** proposed by _Deltares_ has been awarded by _Rijkswaterstaat_ in November 2017.
+This project is carried our in the frame of KPP-CIP projects in 2018, 2019 and 2020. The project **KPPCIP IV, V en Vi Satellieten en bathymetrie voor monitoring kustmorfologie** proposed by _Deltares_ has been awarded by _Rijkswaterstaat_.
 
 * * *
 
 <p align='right'><a href="./2019.html">2019 </a> <a href="./2018.html">2018 ></a></p>
 
-## [](#map2019) SDB Map 2019
-
-<div id="map" style="min-height: 600px">
-  <div id="timelabel"></div>
-  <div id="panel" class="pin-bottom pt36 bg-white z100 ">
-      <div class="bg-white round relative w600">
-          <div class="pin-top pad1 z200 col12 bg-white">
-              <input class="timeslider col12 fr" id="timeslider" title="slider" type="range" min="0" max="1.5" step="0.1" value="0" />
-              <input class="speedslider col12 fr" id="speedslider" title="slider" type="range" min="0.25" max="0.5" step="0.005" value="0.375" />
-          </div>
-          <div id="playbutton" class="button z100" onclick="togglePlayback()">Play</div>
-      </div>
-  </div>
-</div>
-
-
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VubmFkaXkiLCJhIjoiMm9WN3VWQSJ9.b9s_EXvxcqiAbaf5GzrEnA'
-
-  // let tilesPath = "https://storage.googleapis.com/deltares-video-map/mapbox-test/test1/{z}/{x}/{y}.webm"
-  let tilesPath = "https://storage.googleapis.com/deltares-video-map/sdb-rgb-v3.3-video/{z}/{x}/{y}.webm"
-  // let tilesPath = "http://localhost:9966/media/sdb-rgb-test4-video/{z}/{x}/{y}.webm"
-  // let tilesPath = "http://127.0.0.1:4000/media/sdb-rgb-test4-video/{z}/{x}/{y}.webm"
-
-  let zoomMin = 4
-  let zoomMax = 13
-
-  let map = null
-
-  let times = [
-    "2015-01-01 ... 2017-01-01",
-    "2015-04-01 ... 2017-04-01",
-    "2015-07-01 ... 2017-07-01",
-    "2015-10-01 ... 2017-10-01",
-    "2016-01-01 ... 2018-01-01",
-    "2016-04-01 ... 2018-04-01",
-    "2016-07-01 ... 2018-07-01",
-    "2016-10-01 ... 2018-10-01",
-    "2017-01-01 ... 2019-01-01",
-    "2017-04-01 ... 2019-04-01",
-    "2017-07-01 ... 2019-07-01",
-    "2017-10-01 ... 2019-10-01",
-    "2018-01-01 ... 2020-01-01",
-    "2018-04-01 ... 2020-04-01",
-    "2018-07-01 ... 2020-07-01",
-    "2018-10-01 ... 2020-10-01"
-  ]
-
-  var videoStyle = {
-      "version": 8,
-      "sources": {
-          "source1": {
-              "type": "video-tiled",
-              "tiles": [ tilesPath ],
-              tileSize: 256,
-              playbackRate: 0.375,
-              minzoom: zoomMin,
-              maxzoom: zoomMax,
-              scheme: "xyz",
-              geometry: []
-          },
-          "satellite": {
-              "type": "raster",
-              "url": "mapbox://mapbox.satellite",
-              "tileSize": 256
-          }
-      },
-      "layers": [{
-          "id": "background",
-          "type": "background",
-          "paint": {
-              "background-color": "rgb(4,7,14)"
-          }
-      }, {
-          "id": "satellite",
-          "type": "raster",
-          "source": "satellite"
-      }, {
-          "id": "layer1",
-          "type": "raster",
-          "source": "source1"
-      }]
-  };
-
-  function onLoad() {
-    map = new mapboxgl.Map({
-      container: 'map',
-      // pitch: 42, // pitch in degrees
-      // bearing: 26, // bearing in degrees    
-      zoom: 9.876559623103208,
-      center: [6.657906115369997, 53.58250382811332],
-      style: videoStyle
-      // style: 'mapbox://styles/mapbox/dark-v9'
-    });
-
-    // add controls
-    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-    map.addControl(new mapboxgl.GeolocateControl());
-    // map.addControl(new mapboxgl.AttributionControl({compact: true}))
-    // map.addControl(new mapboxgl.ScaleControl());
-    map.addControl(new mapboxgl.FullscreenControl());  
-
-    let slider = document.getElementById('timeslider')
-    let timelabel = document.getElementById('timelabel')
-
-    map.on('style.load', () => {
-        let player = map.getSource('source1').player
-
-        player.onTimeChanged = t => {
-            slider.value = t
-            timelabel.textContent = 'Time: ' + times[Math.floor(t * 10)]
-        }
-
-        slider.addEventListener('input', function() {
-            let currentTime = parseFloat(this.value)
-
-            player.setCurrentTime(currentTime)
-        });
-
-        let sliderSpeed = document.getElementById('speedslider')
-
-        sliderSpeed.addEventListener('input', function() {
-            speed = parseFloat(this.value)
-            getPlayer().playbackRate = speed
-        });
-    })
-  }
-
-  let playing = false;
-
-  function getPlayer() {
-      return map.getSource('source1').player
-  }
-
-  function togglePlayback() {
-      playing = !playing;
-
-      let button = document.getElementById('playbutton')
-      button.innerText = playing ? 'Pause' : 'Play'
-
-      if(playing) {                             
-          let dt = 50 // timer in ms
-          let step = 0.1 // step to seek for the next frame, depends on video FPS
-          getPlayer().playbackRate = parseFloat(document.getElementById('speedslider').value)
-          getPlayer().play(dt, step)
-      } else {
-          getPlayer().pause()
-      }
-  }
-
-</script>
+## [](#map2020) SDB Map 2020
 
 # [](#intro)Introduction
 
@@ -167,8 +17,11 @@ This is a continuation of research from the 2018 KPP project. Results from resea
 
 * [**2019**](#2019) - Improvements to the existing satellite derived bathymetry (SDB) algorithm are explored for the Dutch coast.
 
+* [**2020**](2020) - The SDB intertidal bathymetry has enriched the subtidal algorithm in 2020. Additionally, a [web app](https://gena.users.earthengine.app/view/rws-bathymetry) has been developed for product exploration
+
+
 ***
-# [](#2019)2019
+# [](#2020)2020
 
 ## [](#methodology)Methodology
 
@@ -186,54 +39,4 @@ Focus of the work in 2019 has been to reduce noise in the output data. This was 
 </div>
 <span style="font-size:10pt">**a)** Results using the previous version of the SDB algorithm (CIP2018). It uses four years of data (2013-2018) and the green band only. **b)** Results using the new version of the SDB algorithm (CIP2019). Uses two years of data (2015-2017) and red, green, blue band The image is computed as a composite of water depth images estimated using visible bands separately.</span>
 
-### [](#spectral)Spectral Signatures of Intertidal and Subtidal Coastal Zones
 
-Sampling of Sentinel-2 images between 2016-2019 was done for selected regions along the Dutch coastline to understand the effects of depth, sediments, and seabed type on the optical spectral signature. For all available cloud-free images (981 total) during this time, 200 points were randomly sampled within deep and intertidal zones, as pictured in the figure below. This was to study the effects of the depth on the spectral signature across all bands. This also gives us a broad range of statistics in preparation for applying machine learning models to derive depth.
-
-<div id="images">
-  <a href="assets/images/deep_intertidal_zones.png">
-  <img class="doublefig" src="assets/images/deep_intertidal_zones.png" alt="hi"  class="inline"/></a>
-</div>
-<span style="font-size:10pt"> Regions selected as deep (<span style="color:blue">blue</span>) and intertidal (<span style="color:orange">orange</span>) zones for data sampling and investigation.</span>
-
-Red, green, and blue bands for the Sentinel-2 data show differences in reflectance between deep and intertidal zones. This demonstrates their use in computing satellite derived bathymetry, and will also provide more spectral information for dealing with varying seabed types.
-
-<div id="images">
-  <a href="assets/images/spectral_signatures.png">
-  <img class="doublefig" src="assets/images/spectral_signatures.png" alt="hi"  class="inline"/></a>
-</div>
-<span style="font-size:10pt"> Differences in spectral signatures between points sampled across deep (<span style="color:blue">blue</span>) and intertidal (<span style="color:orange">orange</span>) regions. The depth of water is most distinguishable between red, green, and blue bands.</span>
-
-## [](video)Video Map Tiles
-
-For an easy exploration of the SDB estimates, a map-based web tool has been created. The tool includes functionality to quickly explore the time-dependent SDB estimates using a new technology being developed at Deltares called Video Map Tiles. Video Map Tiles provide a way to convert spatio-temporal datasets into a set of tiled videos, generated at different zoom levels. The classical SlippyMap tiles, usually used to stream static map tiles, such as Google Map or OpenStreetMap, are used as a standard to host Video Map Tiles. To visualize Video Map Tiles, we have extended the Mapbox web library to support the streaming and playing of multiple video tiles with proper time synchronization.
-
-Analysis and export of images have been done for the whole Dutch coast, and extended to other areas in the North Sea. These are at a scale of 19.109 m, corresponding to zoom level 13 of SlippyMap tile resolution.
-
-<div id="images">
-  <a href="assets/images/exported_tiles.png">
-  <img class="doublefig" src="assets/images/exported_tiles.png" alt="hi"  class="inline"/></a>
-</div>
-<span style="font-size:10pt"> Overview of the output tile boundaries used to export the final SDB estimates. Large squares represent SlippyMap tiles at zoom level 9 and the dark polygon defines the extent of the RWS Vaklodingen dataset.</span>
-
-### [](sceneboundary)Scene Boundary Effects
-
-Scene boundary effects were identified, where edges of individual satellite images are visible, in an earlier version of the algorithm. These have been reduced in the current implementation by filtering images that cover >= 75% of the analysis region.
-
-<div id="images">
-  <a href="assets/images/scene_boundaries.PNG">
-  <img class="doublefig" src="assets/images/scene_boundaries.PNG" alt="hi"  class="inline" width="48%"/></a>
-  <a href="assets/images/scene_boundaries_solved.PNG">
-  <img class="doublefig" src="assets/images/scene_boundaries_solved.PNG" alt="hi"  class="inline" width="48%"/></a>
-</div>
-<span style="font-size:10pt">**a)** Scene boundaries visible from previous version of algorithm. **b)** Reduction of scene boundaries </span>
-
-### [](tileboundary)Tile Boundary Effects
-
-Splitting regions of evaluation into tiles corresponding with SlippyMap tile boundaries was to split the Dutch coast into regions of analysis small enough to process using Earth Engine. SlippyMap tiles at level 9 were determined to be an optimal size. These are smaller than Landsat or Sentinel images, allowing for more images for analysis and fewer scene boundaries across any given tile. They are also large enough for reasonable computation time and video tile performance. Dark pixel subtraction from darkest pixel in water causes variation in results across tiles, resulting in visible tile boundaries. A different approach to normalization and analysis boundaries is required to eliminate boundary discontinuities. Future work could eliminate these tile boundary effects. Precomputing a mean or median image from the images available in a time window across the whole region, rather than per tile, should reduce or remove these effects. This is suggested as future work to improve the algorithm.
-
-<div id="images">
-  <a href="assets/images/tile_boundaries_visible.PNG">
-  <img class="doublefig" src="assets/images/tile_boundaries_visible.PNG" alt="hi"  class="inline"/></a>
-</div>
-<span style="font-size:10pt">Boundaries visible from tile geometries.</span>
