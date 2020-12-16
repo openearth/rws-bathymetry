@@ -16,3 +16,13 @@ Using the Cayman theme as template.
 3. Run `script/bootstrap` to install the necessary dependencies
 4. Run `bundle exec jekyll serve` to start the preview server
 5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the website
+
+### Run website locally from within a docker container
+ 
+1. Run an ubuntu-based docker container `docker run --name rwsbathy -p 4000:4000 -it ubuntu`
+2. Install all needed packages with `apt get update`, and `apt-get install git build-essential ruby-full vim`
+3. Follow steps 1. to 3. from previous instructions
+4. Run `bundle exec jekyll serve --host 0.0.0.0` to start the preview server. This host will tell jekyll to serve on all interfaces, even outside docker.
+5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the website
+
+
