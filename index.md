@@ -8,7 +8,6 @@ This project is carried our in the frame of KPP-CIP projects in 2018, 2019 and 2
 
 <p align='right'><a href="./2019.html">2019 </a> <a href="./2018.html">2018 ></a></p>
 
-## [](#map2020) SDB Map 2020
 
 # [](#intro)Introduction
 
