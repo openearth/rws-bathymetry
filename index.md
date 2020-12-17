@@ -10,7 +10,7 @@ This project is carried our in the frame of KPP-CIP projects in 2018, 2019 and 2
 
 # [](#intro)Introduction
 
-This is a continuation of research from the 2018 KPP project. Results from research in 2018 available at:
+This is a continuation of research from the 2018 and 2019 KPP projects. Results from research carried out in the past are available at:
 * [**2018**](./2018.html) - Within this project, _Deltares_ was asked to look at available satellite images in the period 2015-2017 and explore ways to derive bathymetry from those images. Eventually Deltares provided a calibrated bathymetry for two areas of interest and compared the obtained bathymetry with _in-situ_ data collected via standard measurement methods.
 
 * [**2019**](#./2019.html) - Improvements to the existing satellite derived bathymetry (SDB) algorithm are explored for the Dutch coast.
