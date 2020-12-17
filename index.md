@@ -15,9 +15,9 @@ This is a continuation of research from the 2018 KPP project. Results from resea
 
 * [**2019**](#./2019.html) - Improvements to the existing satellite derived bathymetry (SDB) algorithm are explored for the Dutch coast.
 
-* [**2020**](#2020) - The SDB intertidal bathymetry has enriched the subtidal algorithm in 2020. Additionally, the following app has been developed for product exploration: <a href="https://gena.users.earthengine.app/view/rws-bathymetry">web app</a>.
+* [**2020**](#2020) - The SDB intertidal bathymetry has enriched the subtidal algorithm in 2020. Additionally, the following app has been developed for product exploration: <a href="https://gena.users.earthengine.app/view/rws-bathymetry">web app</a>.\
 
- 
+
 <div id="images">
   <a href="assets/images/app2020_1.jpg">
   <img class="doublefig" src="assets/images/app2020_1.jpg" alt="hi"  class="inline"/></a>
